@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
 <head>
     <title>SW:TOR NiM Prestige Table</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
 <body>
-<form method="POST" action="swtor">
+<form method="POST" action="{{ route('swtor.store') }}"> {{ csrf_field() }}
     <p>
-        <label>Character Name</label>
-        <input type="text" name="name" {{ old("email") }}
+        <label>Create character in DB, name:</label>
+        <input type="text" name="name" {{ old("name") }}/>
     </p>
     <p>
-        <input type="submit" name="Submit">
+        <input type="submit" name="Submit"/>
     </p>
 </form>
 </body>
-</head>
+

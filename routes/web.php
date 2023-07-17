@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SwtorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/swtor', function () {
-    return view('swtor');
-});
+Route::get('/swtor', [SwtorController::class, 'index'])->name('swtor.index');
+Route::post('/store', [SwtorController::class, 'store'])->name('swtor.store');
