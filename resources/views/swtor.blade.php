@@ -13,11 +13,14 @@
         </ul>
     </div>
 @endif
-<form method="POST" action="{{ route('swtor.store') }}"> {{ csrf_field() }}
+<form method="POST" action="{{ route('swtor.store') }}"> @csrf
     <p>
         <label>Create character in DB, name:</label>
         <input type="text" name="name" {{ old("name") }}/><button type="submit" name="Submit">Create</button>
     </p>
 </form>
+@foreach($characters as $character)
+    <p>{{ $character->name }}</p>
+@endforeach
 </body>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Characters;
+use App\Models\Prestige;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -10,7 +11,8 @@ class SwtorController extends Controller
 {
     public function index()
     {
-        return view('swtor');
+        $characters = Characters::all();
+        return view('swtor', compact('characters'));
     }
 
     public function store(Request $request)
