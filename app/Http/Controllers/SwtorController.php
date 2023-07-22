@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Characters;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class SwtorController extends Controller
 {
@@ -18,9 +19,12 @@ class SwtorController extends Controller
             'name' => 'required'
         ]);
 
+
         $character = new Characters();
         $character->name = $request->input('name');
+        $character->save();
 
+        return redirect(route('swtor.index'));
     }
 }
 
