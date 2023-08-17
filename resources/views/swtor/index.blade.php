@@ -1,7 +1,5 @@
-<!DOCTYPE HTML>
-<head>
-    <title>SW:TOR NiM Prestige Table</title>
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
+@include('sections.head')
+<title>SW:TOR NiM Prestige Table</title>
 </head>
 <body>
 @if ($errors->any())
@@ -16,11 +14,12 @@
 <form method="POST" action="{{ route('swtor.store') }}"> @csrf
     <p>
         <label>Create character in DB, name:</label>
-        <input type="text" name="name" {{ old("name") }}/><button type="submit" name="Submit">Create</button>
+        <input type="text" name="name" {{ old("name") }}/>
+        <button type="submit" name="Submit">Create</button>
     </p>
 </form>
 @foreach($characters as $character)
-    <p>{{ $character->name }}</p>
+    <a href=>{{ $character->name }}</a><br>
 @endforeach
 </body>
 

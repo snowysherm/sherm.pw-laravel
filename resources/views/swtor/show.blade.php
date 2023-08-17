@@ -1,0 +1,2 @@
+@include('sections.head')
+</head>

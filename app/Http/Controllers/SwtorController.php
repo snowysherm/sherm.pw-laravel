@@ -12,7 +12,17 @@ class SwtorController extends Controller
     public function index()
     {
         $characters = Characters::all();
-        return view('swtor', compact('characters'));
+
+        $prestiges = Prestige::all();
+
+        return view('swtor.index', compact('characters', 'prestiges'));
+    }
+
+    public function show()
+    {
+
+
+        return view('swtor.show');
     }
 
     public function store(Request $request)

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prestige extends Model
 {
     use HasFactory;
+
     protected $table = 'prestige';
-    protected $fillable = 'name';
 
 }
