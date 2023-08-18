@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/swtor', [SwtorController::class, 'index'])->name('swtor.index');
+Route::prefix('swtor')->group(function() {
+Route::get('/', [SwtorController::class, 'index'])->name('swtor.index');
 Route::post('/store', [SwtorController::class, 'store'])->name('swtor.store');
-Route::get('/user/{id}', [SwtorController::class, 'show'])->name('swtor.show');
+Route::get('/character/{id}', [SwtorController::class, 'show'])->name('swtor.show');
+});

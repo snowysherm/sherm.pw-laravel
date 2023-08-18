@@ -20,7 +20,7 @@ class SwtorController extends Controller
 
     public function show(Characters $character)
     {
-        
+
         return view('swtor.show', compact('character'));
     }
 
