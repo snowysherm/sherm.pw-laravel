@@ -18,9 +18,9 @@ class SwtorController extends Controller
         return view('swtor.index', compact('characters', 'prestiges'));
     }
 
-    public function show(Characters $character)
+    public function show($id)
     {
-
+        $character = Characters::find($id);
         return view('swtor.show', compact('character'));
     }
 
