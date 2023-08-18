@@ -19,7 +19,7 @@
     </p>
 </form>
 @foreach($characters as $character)
-    <a href=>{{ $character->name }}</a><br>
+    <a href="{{ route('swtor.show', $character->id) }}">{{ $character->name }}</a><br>
 @endforeach
 </body>
 

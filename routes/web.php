@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/swtor', [SwtorController::class, 'index'])->name('swtor.index');
 Route::post('/store', [SwtorController::class, 'store'])->name('swtor.store');
+Route::get('/user/{id}', [SwtorController::class, 'show'])->name('swtor.show');

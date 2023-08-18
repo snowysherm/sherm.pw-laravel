@@ -18,11 +18,10 @@ class SwtorController extends Controller
         return view('swtor.index', compact('characters', 'prestiges'));
     }
 
-    public function show()
+    public function show(Characters $character)
     {
-
-
-        return view('swtor.show');
+        
+        return view('swtor.show', compact('character'));
     }
 
     public function store(Request $request)
