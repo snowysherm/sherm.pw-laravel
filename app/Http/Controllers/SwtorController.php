@@ -13,30 +13,38 @@ class SwtorController extends Controller
     {
         $characters = Characters::all();
 
-        $prestiges = Prestige::all();
-
-        return view('swtor.index', compact('characters', 'prestiges'));
+        return view('swtor.index', compact('characters'));
     }
 
     public function show($id)
     {
         $character = Characters::find($id);
+
         return view('swtor.show', compact('character'));
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
         ]);
 
-
-        $character = new Characters();
+        $character       = new Characters();
         $character->name = $request->input('name');
         $character->save();
 
         return redirect(route('swtor.index'));
     }
+
+    public function storePrestige(Request $request, $id) {
+        $character = Characters::findOrFail($id);
+        $character->brontes_wings = $request->input('brontes_wings');
+        $character->save();
+
+        return redirect(route('swtor.index'));
+    }
+
+
 }
 
 

@@ -15,6 +15,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->boolean('brontes_wings')->default(0);
+            $table->boolean('helix_hyperpod')->default(0);
+            $table->boolean('titan_6')->default(0);
+            $table->boolean('bantam_dxun_reaper')->default(0);
+            $table->boolean('rancor')->default(0);
+            $table->boolean('dragon_wings')->default(0);
         });
     }
 

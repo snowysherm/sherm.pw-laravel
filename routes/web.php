@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('swtor')->group(function() {
-Route::get('/', [SwtorController::class, 'index'])->name('swtor.index');
-Route::post('/store', [SwtorController::class, 'store'])->name('swtor.store');
-Route::get('/character/{id}', [SwtorController::class, 'show'])->name('swtor.show');
+    Route::get('/', [SwtorController::class, 'index'])->name('swtor.index');
+    Route::post('/store', [SwtorController::class, 'store'])->name('swtor.store');
+    Route::post('/update/{id}', [SwtorController::class, 'storePrestige'])->name('swtor.char.update');
+    Route::get('/character/{id}', [SwtorController::class, 'show'])->name('swtor.show');
 });
