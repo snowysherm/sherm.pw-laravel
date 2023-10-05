@@ -21,9 +21,5 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PrestigeSeeder::class,
         ]);
-
-        $this->call([
-            ClockSeeder::class,
-        ]);
     }
 }

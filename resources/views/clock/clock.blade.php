@@ -11,4 +11,6 @@
 
 <br>
 
-<h2>Noch {{ $diff }} Tage bis es so weit ist</h2>
+@foreach($datesWithDiffInDays as $day)
+    <h2>Noch {{ $day }} Tage</h2>
+@endforeach

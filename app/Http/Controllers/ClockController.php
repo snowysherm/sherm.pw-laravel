@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Clock;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class ClockController extends Controller
 {
     public function index()
     {
-        $timeLeft = Carbon::parse(Clock::where('id', 1)->first()->date);
-        $diff = $timeLeft->diffInDays();
+        $dates = Clock::all()->collect();
 
-        return view('clock.clock', compact('diff'));
+        $now = Carbon::now();
+
+
+
+
+        return view('clock.clock', compact('dates'));
     }
 
     public function store(Request $request)
