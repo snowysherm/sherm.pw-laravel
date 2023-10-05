@@ -2,10 +2,11 @@
 </head>
 <form method="POST" action="{{ route('clock.store') }}">
     @csrf
-<label>Ziel Datum: </label>
-<input type="date" name="date">
-<label>Submit </label>
-<input type="submit">
+    <label>Ziel Datum: </label>
+    <input type="date" name="date">
+    <label>Name: </label>
+    <input type="text" name="name">
+    <input type="submit">
 </form>
 
 <br>

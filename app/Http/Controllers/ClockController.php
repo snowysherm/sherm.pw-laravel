@@ -19,11 +19,11 @@ class ClockController extends Controller
     public function store(Request $request)
     {
 
-        $clock = Clock::where('id', 1);
+        $clock = new Clock();
+        $clock->date = $request->input('date');
+        $clock->name = $request->input('name');
+        $clock->save();
 
-        $clock->update([
-            'date' => $request->input('date')
-        ]);
         return redirect(route('clock.index'));
     }
 }

@@ -10,6 +10,7 @@ return new class extends Migration {
         Schema::create('clocks', function(Blueprint $table) {
             $table->id();
             $table->dateTime('date');
+            $table->text('name');
         });
     }
 
